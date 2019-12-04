@@ -16,7 +16,7 @@ import {
 } from './constants.js';
 
 //-- Module State --------------------------------
-const keyState = [];
+const keyState = {};
 let keyHandlers = {};
 
 //-- Setup (boot) --------------------------------
@@ -36,8 +36,7 @@ export function keyCheck(key) {
     // enforce canonical key representation
     key = key.toLowerCase();
     // check key state
-    let codeIndex = key.charCodeAt();
-    if(!keyState[codeIndex]){
+    if(!keyState[key]){
         return false;
     }
     return true;
@@ -61,14 +60,12 @@ export function flushKeyHandlers() {
 //-- Keyboard state change handlers --------------
 function handleKeyDown(key) {
     // Set keyState
-    let codeIndex = key.charCodeAt();
-    keyState[codeIndex] = true;
+    keyState[key] = true;
     // trigger key handler
     const keyHandler = keyHandlers[key]
     if(!keyHandler) { return;}
     keyHandler(key);
 }
 function handleKeyUp(key) {
-    let codeIndex = key.charCodeAt();
-    keyState[codeIndex] = false;
+    delete keyState[key];
 }
