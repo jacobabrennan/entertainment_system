@@ -20,3 +20,10 @@ export const DISPLAY_FONT_FAMILY = 'press_start_k_regular';
 // DISPLAY_WIDTH/HEIGHT: The resolution of the system display
 export const DISPLAY_WIDTH_DEFAULT = 256;
 export const DISPLAY_HEIGHT_DEFAULT = 256;
+
+//-- Keyboard key values -------------------------
+export const KEY_ARROW_UP = 'ArrowUp';
+export const KEY_ARROW_DOWN = 'ArrowDown';
+export const KEY_ARROW_RIGHT = 'ArrowRight';
+export const KEY_ARROW_LEFT = 'ArrowLeft';
+export const KEY_SPACE = ' ';
