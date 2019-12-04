@@ -18,7 +18,7 @@
 */
 
 //-- Dependencies --------------------------------
-import system from "./logic/index.js";
+import system from "./api/index.js";
 
 //-- Module State --------------------------------
 export const particles = [];

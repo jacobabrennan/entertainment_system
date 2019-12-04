@@ -9,7 +9,7 @@
 */
 
 //-- Dependencies --------------------------------
-import system, { DISPLAY_WIDTH } from './logic/index.js';
+import system, { DISPLAY_WIDTH } from './api/index.js';
 import { particles } from './particle.js';
 import { Player } from './player.js';
 

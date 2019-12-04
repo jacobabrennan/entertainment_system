@@ -12,8 +12,8 @@
 */
 
 //-- Dependencies --------------------------------
-import { KEY_ARROW_LEFT, KEY_ARROW_RIGHT, KEY_SPACE } from './logic/constants.js';
-import system, { DISPLAY_WIDTH, DISPLAY_HEIGHT } from './logic/index.js';
+import { KEY_ARROW_LEFT, KEY_ARROW_RIGHT, KEY_SPACE } from './api/constants.js';
+import system, { DISPLAY_WIDTH, DISPLAY_HEIGHT } from './api/index.js';
 import { Particle } from './particle.js';
 
 //-- Player --------------------------------------
