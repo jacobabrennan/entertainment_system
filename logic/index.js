@@ -3,15 +3,31 @@
 //== Entertainment System ======================================================
 
 //-- Dependencies --------------------------------
-import {
-    DOM_ID_GAME_AREA,
-} from './constants.js';
-import { setup as setupDisplay } from './display.js';
-import { setup as setupKeyboard } from './keyboard.js';
+import * as display from './display.js';
+import * as keyboard from './keyboard.js';
 
-//-- Boot System ---------------------------------
-// Retrieve container from DOM
-const container = document.getElementById(DOM_ID_GAME_AREA);
-// Setup sub system
-setupDisplay(container);
-setupKeyboard(container);
+//-- Export select constants ---------------------
+export {
+    DISPLAY_WIDTH_DEFAULT as DISPLAY_WIDTH,
+    DISPLAY_HEIGHT_DEFAULT as DISPLAY_HEIGHT,
+    DISPLAY_FONT_SIZE,
+} from './constants.js';
+
+//-- Define and export system --------------------
+const system = {}
+export default system;
+
+//-- System Boot ---------------------------------
+system.boot = function (containerId) {
+    // Retrieve container from DOM
+    const container = document.getElementById(containerId);
+    // Setup sub system
+    display.setup(container);
+    keyboard.setup(container);
+};
+
+//-- Expose sub systems --------------------------
+system.display = Object.assign({}, display);
+delete system.display.setup;
+system.keyboard = Object.assign({}, keyboard);
+delete system.keyboard.setup;

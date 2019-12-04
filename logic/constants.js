@@ -4,7 +4,6 @@
 
 //-- DOM -----------------------------------------
 // DOM_ID_GAME_AREA (nonconf.): The ID of the div in which to display the game
-export const DOM_ID_GAME_AREA = 'game_area';
 export const DOM_STYLE_DYNAMIC = `
 @font-face {
     font-family: 'press_start_k_regular';
