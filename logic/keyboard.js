@@ -21,9 +21,6 @@ let keyHandlers = {};
 
 //-- Setup (boot) --------------------------------
 export function setup(container) {
-    // Prep container for keyboard events
-    container.focus();
-    // Handle keyboard events
     function handleEventKeyDown(eventKeyDown) {
         handleKeyDown(eventKeyDown.key.toLowerCase());
     }
