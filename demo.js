@@ -6,6 +6,10 @@
     commands and display game objects in a game loop. Every game has at its core
     a process of:
         input -> game logic -> output
+    
+    The demo controls are as follows:
+    - Left / Right arrow keys: Move laterally
+    - Spacebar: Fire laser
 */
 
 //-- Dependencies --------------------------------
@@ -14,14 +18,17 @@ import { particles } from './particle.js';
 import { Player } from './player.js';
 
 //-- Project Constants ---------------------------
+const DOM_CONTAINER_ID = 'game_area'; /* The id of the target container for the
+    game. The specified element must be a container, such as a div, and must be
+    empty. */
 const MAIN_LOOP_ITERATION_DELAY = 1000/30;
 
 //-- Setup Game ----------------------------------
-system.boot('game_area');
+system.boot(DOM_CONTAINER_ID);
 new Player(DISPLAY_WIDTH/2, 8);
 
 //-- Enter main game loop ------------------------
-async function main() {
+(async function main() {
     while(true) {
         // Blank whole screen
         system.display.blank();
@@ -38,8 +45,4 @@ async function main() {
         // Delay before continuing to next iteration
         await system.sleep(MAIN_LOOP_ITERATION_DELAY);
     }
-}
-main(); /*
-    This is a clumsy construction, but necessary with how we've defined
-    the game loop using an async function for our iteration delay.
-*/
+})();
